@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Luxury Car Sale</title>
+  <title>Register - Nguyễn Đức Auto</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
   <style>
@@ -61,7 +61,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#">Luxury Car Sale</a>
+  <a class="navbar-brand" href="#">Nguyễn Đức Auto</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -105,7 +105,7 @@
 </div>
 
 <div class="footer">
-  <p>© 2025 Luxury Car Sale. All Rights Reserved.</p>
+  <p>© 2025 Nguyễn Đức Auto. All Rights Reserved.</p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

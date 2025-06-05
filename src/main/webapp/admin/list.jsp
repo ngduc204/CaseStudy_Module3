@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Management Application</title>
+    <title>Car Management - Nguyễn Đức Auto</title>
+    <link rel="icon" type="image/png" href="https://xeotogiadinh.com/wp-content/uploads/2019/02/45326-Sticker-Porsche-Logo.png">
+    <link rel="apple-touch-icon" href="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png?v=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -34,6 +36,9 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/car?action=create">Add New Car</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
             </li>
         </ul>
     </div>
@@ -100,3 +105,4 @@
 </script>
 </body>
 </html>
+```

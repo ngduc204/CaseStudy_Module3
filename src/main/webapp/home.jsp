@@ -1,132 +1,189 @@
-<%--<!DOCTYPE html>--%>
-<%--<html lang="en">--%>
-<%--<head>--%>
-<%--  <meta charset="UTF-8">--%>
-<%--  <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
-<%--  <title>Luxury Car Sale</title>--%>
-<%--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">--%>
-<%--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">--%>
-<%--  <style>--%>
-<%--    body {--%>
-<%--      font-family: 'Roboto', sans-serif;--%>
-<%--      background-color: #f8f9fa;--%>
-<%--    }--%>
-<%--    .navbar {--%>
-<%--      background-color: #343a40;--%>
-<%--      z-index: 10;--%>
-<%--      position: relative;--%>
-<%--    }--%>
-<%--    .navbar-brand, .nav-link {--%>
-<%--      color: #ffffff !important;--%>
-<%--    }--%>
-<%--    .hero {--%>
-<%--      background: url('https://static.automotor.vn/images/upload/2022/08/28/bugatti-chay-hang-autonews.jpeg') no-repeat center center/cover;--%>
-<%--      height: 60vh;--%>
-<%--      display: flex;--%>
-<%--      flex-direction: column;--%>
-<%--      justify-content: center;--%>
-<%--      align-items: center;--%>
-<%--      color: white;--%>
-<%--      text-align: center;--%>
-<%--      position: relative;--%>
-<%--      padding-top: 56px;--%>
-<%--    }--%>
-<%--    .hero h1 {--%>
-<%--      font-size: 3rem;--%>
-<%--      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);--%>
-<%--      position: absolute;--%>
-<%--      top: 50%;--%>
-<%--      left: 50%;--%>
-<%--      transform: translate(-50%, -50%);--%>
-<%--    }--%>
-<%--    .hero img {--%>
-<%--      width: 100%;--%>
-<%--      height: auto;--%>
-<%--    }--%>
-<%--    .car-card {--%>
-<%--      margin: 20px 0;--%>
-<%--      border: 1px solid #dee2e6;--%>
-<%--      border-radius: 10px;--%>
-<%--      transition: transform 0.3s;--%>
-<%--    }--%>
-<%--    .car-card:hover {--%>
-<%--      transform: scale(1.05);--%>
-<%--      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);--%>
-<%--    }--%>
-<%--    .footer {--%>
-<%--      background-color: #343a40;--%>
-<%--      color: white;--%>
-<%--      padding: 20px 0;--%>
-<%--      text-align: center;--%>
-<%--    }--%>
-<%--  </style>--%>
-<%--</head>--%>
-<%--<body>--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Đức Auto</title>
+    <link rel="icon" type="image/png"
+          href="https://xeotogiadinh.com/wp-content/uploads/2019/02/45326-Sticker-Porsche-Logo.png">
+    <link rel="apple-touch-icon" href="https://1000logos.net/wp-content/uploads/2018/02/Porsche-Logo.png?v=1">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://static.automotor.vn/images/upload/2022/08/28/bugatti-chay-hang-autonews.jpeg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
 
-<%--<nav class="navbar navbar-expand-lg navbar-dark">--%>
-<%--  <a class="navbar-brand" href="#">Luxury Car Sale</a>--%>
-<%--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--    <span class="navbar-toggler-icon"></span>--%>
-<%--  </button>--%>
-<%--  <div class="collapse navbar-collapse" id="navbarNav">--%>
-<%--    <ul class="navbar-nav ml-auto">--%>
-<%--      <li class="nav-item">--%>
-<%--        <a class="nav-link" href="#cars-section">Cars</a> <!-- Cập nhật link ở đây -->--%>
-<%--      </li>--%>
-<%--      <li class="nav-item">--%>
-<%--        <a class="nav-link" href="#contact">Contact Us</a>--%>
-<%--      </li>--%>
-<%--    </ul>--%>
-<%--  </div>--%>
-<%--</nav>--%>
+        .car-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-<%--<div class="hero">--%>
-<%--  <h1>Find Your Dream Car</h1>--%>
-<%--  <img src="https://static.automotor.vn/images/upload/2022/08/28/bugatti-chay-hang-autonews.jpeg" alt="Dream Car" class="img-fluid">--%>
-<%--</div>--%>
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-<%--<div class="container mt-5" id="cars-section">--%>
-<%--  <h2 class="text-center mb-4">Available Cars</h2>--%>
-<%--  <div class="row">--%>
-<%--    <div class="col-md-4">--%>
-<%--      <div class="card car-card">--%>
-<%--        <img src="https://example.com/car1.jpg" class="card-img-top" alt="Car 1">--%>
-<%--        <div class="card-body">--%>
-<%--          <h5 class="card-title">Car Model 1</h5>--%>
-<%--          <p class="card-text">Company: XYZ<br>Price: $50,000</p>--%>
-<%--          <a href="#" class="btn btn-primary">View Details</a>--%>
-<%--        </div>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-<%--    <div class="col-md-4">--%>
-<%--      <div class="card car-card">--%>
-<%--        <img src="https://example.com/car2.jpg" class="card-img-top" alt="Car 2">--%>
-<%--        <div class="card-body">--%>
-<%--          <h5 class="card-title">Car Model 2</h5>--%>
-<%--          <p class="card-text">Company: ABC<br>Price: $60,000</p>--%>
-<%--          <a href="#" class="btn btn-primary">View Details</a>--%>
-<%--        </div>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-<%--    <div class="col-md-4">--%>
-<%--      <div class="card car-card">--%>
-<%--        <img src="https://example.com/car3.jpg" class="card-img-top" alt="Car 3">--%>
-<%--        <div class="card-body">--%>
-<%--          <h5 class="card-title">Car Model 3</h5>--%>
-<%--          <p class="card-text">Company: LMN<br>Price: $70,000</p>--%>
-<%--          <a href="#" class="btn btn-primary">View Details</a>--%>
-<%--        </div>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-<%--  </div>--%>
-<%--</div>--%>
+        .car-card img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
 
-<%--<div class="footer" id="contact">--%>
-<%--  <p>&copy; 2025 Luxury Car Sale. All Rights Reserved.</p>--%>
-<%--</div>--%>
+        .filter-btn:hover {
+            background-color: #1d4ed8;
+        }
 
-<%--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>--%>
-<%--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>--%>
-<%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>--%>
-<%--</body>--%>
-<%--</html>--%>
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+<!-- Navbar -->
+<nav class="navbar fixed top-0 w-full bg-black bg-opacity-80 text-white z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold">Nguyễn Đức Auto</a>
+        <div class="space-x-6">
+            <a href="#cars-section" class="hover:text-blue-400 transition">Vehicle list</a>
+            <a href="configure.jsp" class="hover:text-blue-400 transition">Configure your car</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            <a href="logout" class="hover:text-blue-400 transition">Sign Out</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div>
+        <h1 class="text-5xl font-bold mb-4">Find Your Dream Car</h1>
+        <%--        <p class="text-lg mb-6">Khám phá bộ sưu tập xe sang trọng với thiết kế đẳng cấp và hiệu suất vượt trội.</p>--%>
+        <p class="text-lg mb-6">Explore a collection of luxury cars with classy design and outstanding performance.</p>
+        <a href="#cars-section" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">View
+            Car Now</a>
+    </div>
+</div>
+
+<!-- Search and Filter Section -->
+<div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="w-full md:w-1/3 mb-4 md:mb-0">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên xe hoặc hãng..."
+                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div class="flex space-x-4">
+            <select id="companyFilter"
+                    class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <option value="">All brands</option>
+                <option value="Bugatti">Bugatti</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Maserati">Maserati</option>
+                <option value="BMW">BMW</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Ferrari">Ferrari</option>
+            </select>
+            <select id="priceFilter" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <option value="">All prices</option>
+                <option value="low">Under $500,000</option>
+                <option value="medium">$500,000 - $1,000,000</option>
+                <option value="high">Over $1,000,000</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Cars Section -->
+    <div id="cars-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <c:forEach var="car" items="${listCars}">
+            <div class="car-card bg-white rounded-lg shadow-lg overflow-hidden" data-company="${car.company}"
+                 data-price="${car.price}">
+                <img src="${car.imageUrl}" alt="${car.name}" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">${car.name}</h3>
+                    <p class="text-gray-600 mb-1">Hãng: ${car.company}</p>
+                    <p class="text-gray-600 mb-3">Giá: $${car.price}</p>
+                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Xem Chi
+                        Tiết</a>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-8" id="contact">
+    <div class="container mx-auto px-4 text-center">
+        <h3 class="text-2xl font-bold mb-4">Contact us!</h3>
+        <p class="mb-4">Email: ngduchd204@gmail.com | Hotline: (+84) 343 883 833</p>
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://www.facebook.com/nguyen.uc.813846/?locale=vi_VN" target="_blank"
+               class="text-white hover:text-blue-400 transition">
+                <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/ngduc.04/" target="_blank"
+               class="text-white hover:text-blue-400 transition">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="mailto:ngduchd204@gmail.com" class="text-white hover:text-blue-400 transition">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+        </div>
+        <p>© 2025 Nguyễn Đức Auto.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Navbar scroll effect
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+    });
+
+    // Search and Filter
+    $('#searchInput, #companyFilter, #priceFilter').on('input change', function () {
+        let search = $('#searchInput').val().toLowerCase();
+        let company = $('#companyFilter').val();
+        let price = $('#priceFilter').val();
+
+        $('.car-card').each(function () {
+            let carName = $(this).find('h3').text().toLowerCase();
+            let carCompany = $(this).data('company');
+            let carPrice = parseFloat($(this).data('price'));
+
+            let show = true;
+
+            if (search && !carName.includes(search) && !carCompany.toLowerCase().includes(search)) {
+                show = false;
+            }
+
+            if (company && carCompany !== company) {
+                show = false;
+            }
+
+            if (price) {
+                if (price === 'low' && carPrice >= 500000) show = false;
+                else if (price === 'medium' && (carPrice < 500000 || carPrice >= 1000000)) show = false;
+                else if (price === 'high' && carPrice <= 1000000) show = false;
+            }
+
+            $(this).toggle(show);
+        });
+    });
+</script>
+</body>
+</html>

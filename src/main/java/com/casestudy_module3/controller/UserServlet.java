@@ -105,7 +105,7 @@ public class UserServlet extends HttpServlet {
             if ("admin".equals(user.getRole())) {
                 response.sendRedirect("car");
             } else {
-                response.sendRedirect("showCars");
+                response.sendRedirect("home");
             }
         }
     }

@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/car", "/showCars"})
+@WebServlet(urlPatterns = {"/car", "/home"})
 public class CarServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private CarDAO carDAO;
@@ -71,21 +71,21 @@ public class CarServlet extends HttpServlet {
             switch (action) {
                 case "create":
                     if (!"admin".equals(user.getRole())) {
-                        response.sendRedirect("showCars");
+                        response.sendRedirect("home");
                         return;
                     }
                     showNewForm(request, response);
                     break;
                 case "update":
                     if (!"admin".equals(user.getRole())) {
-                        response.sendRedirect("showCars");
+                        response.sendRedirect("home");
                         return;
                     }
                     showUpdateForm(request, response);
                     break;
                 case "delete":
                     if (!"admin".equals(user.getRole())) {
-                        response.sendRedirect("showCars");
+                        response.sendRedirect("home");
                         return;
                     }
                     deleteCar(request, response);
@@ -111,7 +111,7 @@ public class CarServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("admin/list.jsp");
             dispatcher.forward(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/showCars.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
             dispatcher.forward(request, response);
         }
     }
