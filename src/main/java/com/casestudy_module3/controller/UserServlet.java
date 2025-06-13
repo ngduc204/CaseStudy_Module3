@@ -2,7 +2,7 @@ package com.casestudy_module3.controller;
 
 import com.casestudy_module3.model.User;
 import com.casestudy_module3.service.UserDAO;
-import org.mindrot.jbcrypt.BCrypt; // Thêm import cho BCrypt
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -123,8 +123,7 @@ public class UserServlet extends HttpServlet {
         }
 
         try {
-            // Băm mật khẩu bằng BCrypt
-            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); //Mã hóa mk
             User user = new User(username, hashedPassword, role);
             userDAO.registerUser(user);
             response.sendRedirect("login");
